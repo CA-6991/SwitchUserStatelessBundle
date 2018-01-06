@@ -92,7 +92,7 @@ class SwitchUserStatelessListener implements ListenerInterface
         $providerKey,
         AccessDecisionManagerInterface $accessDecisionManager,
         LoggerInterface $logger = null,
-        $usernameParameter = 'X-Switch-User',
+        $usernameParameter = 'impersonate',
         $role = 'ROLE_ALLOWED_TO_SWITCH',
         EventDispatcherInterface $dispatcher = null
     ) {
