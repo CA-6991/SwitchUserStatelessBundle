@@ -117,7 +117,7 @@ class SwitchUserStatelessListener implements ListenerInterface
         $request = $event->getRequest();
 
         // Check if specified parameter is sent in headers
-        if (!$request->headers->get($this->usernameParameter)) {
+        if (!$request->query->get($this->usernameParameter)) {
             return;
         }
 
@@ -144,7 +144,7 @@ class SwitchUserStatelessListener implements ListenerInterface
             throw new AccessDeniedException();
         }
 
-        $username = $request->headers->get($this->usernameParameter);
+        $username = $request->query->get($this->usernameParameter);
 
         $this->logger->info(
             'Attempt to switch user',
